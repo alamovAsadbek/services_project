@@ -9,5 +9,5 @@ class SocialNetworkModel(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = "Social Networks"
-        verbose_name = "Social Network"
+        verbose_name_plural = "Ijtimoiy tarmoqlar"
+        verbose_name = "Ijtimoiy tarmoq"
