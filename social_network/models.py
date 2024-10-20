@@ -16,8 +16,11 @@ class SocialNetworkModel(BaseModel):
         verbose_name = "Ijtimoiy tarmoq"
 
 
-class SiteNameModel(BaseModel):
+class SiteModel(BaseModel):
     site_name = models.CharField(max_length=200, null=True, blank=True)
+    location = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    phone = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.site_name
