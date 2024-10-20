@@ -25,7 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # local apps
-    'common'
+    'common',
+    'about_us',
+    'home',
+    'services',
+    'social_network',
+    'team'
+
 ]
 
 MIDDLEWARE = [
