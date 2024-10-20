@@ -2,11 +2,12 @@ from django.db import models
 
 
 class SocialNetworkModel(models.Model):
-    name = models.CharField(max_length=200)
-    url = models.URLField()
+    facebook = models.CharField(max_length=200, null=True, blank=True)
+    instagram = models.CharField(max_length=200, null=True, blank=True)
+    youtube = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.instagram
 
     class Meta:
         verbose_name_plural = "Ijtimoiy tarmoqlar"
