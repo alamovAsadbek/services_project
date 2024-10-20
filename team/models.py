@@ -17,3 +17,17 @@ class TeamModel(BaseModel):
     class Meta:
         verbose_name = 'Xodim'
         verbose_name_plural = 'Xodimlar'
+
+
+class ReviewModel(BaseModel):
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
+    description = models.TextField()
+    image = models.ImageField(upload_to='reviews', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        verbose_name = 'Sharh'
+        verbose_name_plural = 'Sharhlar'
