@@ -26,5 +26,5 @@ class SiteModel(BaseModel):
         return self.site_name
 
     class Meta:
-        verbose_name_plural = "Sayt nomlari"
-        verbose_name = "Sayt nomi"
+        verbose_name_plural = "Sayt ma'lumotlari"
+        verbose_name = "Sayt ma'lumotlari"
