@@ -3,7 +3,7 @@ from django.db import models
 from common.models import BaseModel
 
 
-class AboutUs(BaseModel):
+class AboutUsModel(BaseModel):
     title = models.CharField(max_length=200)
     description = models.TextField()
     image1 = models.ImageField(upload_to='about_us')
