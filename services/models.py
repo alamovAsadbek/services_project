@@ -12,3 +12,7 @@ class ServiceModel(BaseModel):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = "Xizmatlarimiz"
+        verbose_name = "Xizmet"
