@@ -15,14 +15,19 @@ class FooterView(View):
             'footer_information': footer_information
         }
         print(context)
+
         return render(request, 'layouts/copyright/copyright.html', context)
 
 
 class HomeView(View):
     def get(self, request):
+        footer_view = FooterView(navigate_link='your_redirect_link_here')
+        footer_context = footer_view.get(request)
+
         site_information = SiteModel.objects.all()
         context = {
-            'site_information': site_information
+            'site_information': site_information,
+            **footer_context.context_data,
         }
-        FooterView.as_view()
+
         return render(request, 'index.html', context)
