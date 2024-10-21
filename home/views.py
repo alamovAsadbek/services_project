@@ -19,4 +19,5 @@ class FooterView(View):
         context = {
             'footer_information': footer_information
         }
+        print(context)
         return render(request, 'layouts/copyright/copyright.html', context)
