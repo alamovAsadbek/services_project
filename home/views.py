@@ -20,5 +20,5 @@ class HomeView(View):
         context = {
             'site_information': site_information
         }
-        FooterView()
+        FooterView.as_view()
         return render(request, 'index.html', context)
