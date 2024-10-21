@@ -11,3 +11,8 @@ class HomeView(View):
             'site_information': site_information
         }
         return render(request, 'index.html', context)
+
+
+class FooterView(View):
+    def get(self, request):
+        return render(request, 'layouts/copyright/copyright.html')
