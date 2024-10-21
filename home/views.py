@@ -15,4 +15,8 @@ class HomeView(View):
 
 class FooterView(View):
     def get(self, request):
-        return render(request, 'layouts/copyright/copyright.html')
+        footer_information = SiteModel.objects.all()
+        context = {
+            'footer_information': footer_information
+        }
+        return render(request, 'layouts/copyright/copyright.html', context)
