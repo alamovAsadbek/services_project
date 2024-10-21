@@ -8,9 +8,9 @@ class SiteModel(BaseModel):
     location = models.CharField(max_length=200, null=True, blank=True, verbose_name="Servis manzili")
     email = models.EmailField(null=True, blank=True, verbose_name="Elektron pochta manzili")
     phone = models.CharField(max_length=200, null=True, blank=True, verbose_name="Telefon raqami")
-    facebook = models.URLField(max_length=200, null=True, blank=True, verbose_name="Facebook manzili")
-    instagram = models.URLField(max_length=200, null=True, blank=True, verbose_name="Instagram manzili")
-    youtube = models.URLField(max_length=200, null=True, blank=True, verbose_name="Youtube manzili")
+    facebook = models.CharField(max_length=200, null=True, blank=True, verbose_name="Facebook manzili")
+    instagram = models.CharField(max_length=200, null=True, blank=True, verbose_name="Instagram manzili")
+    youtube = models.CharField(max_length=200, null=True, blank=True, verbose_name="Youtube manzili")
 
     def __str__(self):
         return self.site_name
