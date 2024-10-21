@@ -3,6 +3,7 @@ from django.urls import path
 from about_us.views import *
 from home.views import *
 from services.views import *
+from team.views import *
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
