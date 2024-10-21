@@ -9,25 +9,24 @@ class FooterView(View):
         super().__init__()
         self.navigate_link = navigate_link
 
-    def get(self, request):
+    def get_context(self):
         footer_information = SiteModel.objects.all()
-        context = {
+        return {
             'footer_information': footer_information
         }
-        print(context)
-
-        return render(request, 'layouts/copyright/copyright.html', context)
 
 
 class HomeView(View):
     def get(self, request):
-        footer_view = FooterView(navigate_link='your_redirect_link_here')
-        footer_context = footer_view.get(request)
+        # FooterView dan kontekstni oling
+        footer_view = FooterView(navigate_link='home')
+        footer_context = footer_view.get_context()
 
+        # Boshqa kontekstni to'plang
         site_information = SiteModel.objects.all()
         context = {
             'site_information': site_information,
-            **footer_context.context_data,
+            **footer_context,  # Footer kontekstini qo'shing
         }
 
         return render(request, 'index.html', context)
