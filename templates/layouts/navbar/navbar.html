@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="blog.html" class="nav-item nav-link">Bizning ishlarimiz</a>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
+                <a href="{% url 'works' %}" class="nav-item nav-link">Bizning ishlarimiz</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Carousel Start -->
-    <div class="header-carousel owl-carousel">
+    <div class=" header-carousel owl-carousel">
         <div class="header-carousel-item">
             <img src="{% static 'img/carousel-1.jpg' %}" class="img-fluid w-100" alt="Image">
             <div class="carousel-caption">
@@ -29,9 +29,11 @@
                         <div class="col-xl-7 animated fadeInLeft">
                             <div class="text-sm-center text-md-end">
                                 <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Stocker</h4>
-                                <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with higher
+                                <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with
+                                    higher
                                     return</h1>
-                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
                                     industry. Lorem Ipsum has been the industry's standard dummy...
                                 </p>
                                 <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
@@ -67,9 +69,11 @@
                         <div class="col-12 animated fadeInUp">
                             <div class="text-center">
                                 <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Stocker</h4>
-                                <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with higher
+                                <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with
+                                    higher
                                     return</h1>
-                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
                                     industry. Lorem Ipsum has been the industry's standard dummy...
                                 </p>
                                 <div class="d-flex justify-content-center flex-shrink-0 mb-4">
