@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+admin.site.register(WorkModel)
+admin.site.register(ServiceModel)
+admin.site.register(FeatureModel)
