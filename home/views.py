@@ -5,6 +5,10 @@ from social_network.models import SiteModel
 
 
 class FooterView(View):
+    def __init__(self, navigate_link):
+        super().__init__()
+        self.navigate_link = navigate_link
+
     def get(self, request):
         footer_information = SiteModel.objects.all()
         context = {
