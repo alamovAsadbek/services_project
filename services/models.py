@@ -15,7 +15,7 @@ class ServiceModel(BaseModel):
 
     class Meta:
         verbose_name_plural = "Xizmatlarimiz"
-        verbose_name = "Xizmet"
+        verbose_name = "Xizmat"
 
 
 class FeatureModel(BaseModel):
