@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
+from about_us.models import AboutUsModel
 from social_network.models import SiteModel
 from .models import BaseCarouselModel
 
@@ -22,4 +23,6 @@ class BaseView(View):
 class HomeView(BaseView):
     def get(self, request):
         context = self.get_context_data()
+        about = AboutUsModel.objects.all()
+        context['about'] = about
         return render(request, 'index.html', context)
