@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from django.views import View
 
-from home.models import BaseCarouselModel
 from social_network.models import SiteModel
+from .models import BaseCarouselModel
 
 
 class BaseView(View):
     def get(self, request):
         site_information = SiteModel.objects.all()
         carousel_information = BaseCarouselModel.objects.all()
+        print(BaseCarouselModel.objects.all())
         context = {
             'site_information': site_information,
             'carousel_information': carousel_information
