@@ -83,7 +83,7 @@
     <!-- Carousel Start -->
     <div class=" header-carousel owl-carousel">
         {% for carousel in carousel_information %}
-            {% if forloop.counter|divisibleby:2 == 0 %}
+            {% if forloop.counter|divisibleby:2 %}
                 <div class="header-carousel-item">
                     <img src="{% static 'img/new images/1.jpg' %}" class="img-fluid w-100" alt="Image">
                     <div class="carousel-caption">
