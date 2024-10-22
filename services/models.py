@@ -1,6 +1,7 @@
+from PIL import Image as PILImage
 from django.core.exceptions import ValidationError
 from django.db import models
-from PIL import Image as PILImage
+
 from common.models import BaseModel
 
 
@@ -18,7 +19,7 @@ def validate_image(image):
 class ServiceModel(BaseModel):
     title = models.CharField(max_length=255, unique=True, verbose_name="Xizmat nomi")
     description = models.TextField(verbose_name="Xizmat haqida ma'lumot")
-    image = models.ImageField(upload_to='services', verbose_name="Xizmat rasmi")
+    image = models.ImageField(upload_to='services', verbose_name="Xizmat rasmi", validators=[validate_image])
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Xizmat narxi")
     is_active = models.BooleanField(default=True, verbose_name="Faol xizmat")
 
