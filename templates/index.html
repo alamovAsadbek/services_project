@@ -10,39 +10,22 @@
                 <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
                     <div>
                         <h4 class="text-primary">Biz haqimizda</h4>
-                        <h1 class="display-5 mb-4">Meet our company unless miss the opportunity</h1>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum velit temporibus
-                            repudiandae ipsa, eaque perspiciatis cumque incidunt tenetur sequi reiciendis.
+                        <h1 class="display-5 mb-4">{{ about.0.title }}</h1>
+                        <p class="mb-4">
+                            {{ about.0.description }}
                         </p>
                         <div class="row g-4">
-                            <div class="col-md-6 col-lg-6 col-xl-6">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-lightbulb fa-3x text-primary"></i></div>
-                                    <div class="ms-4">
-                                        <h4>Business Consuluting</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-6">
-                                <div class="d-flex">
-                                    <div><i class="bi bi-bookmark-heart-fill fa-3x text-primary"></i></div>
-                                    <div class="ms-4">
-                                        <h4>Year Of Expertise</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-sm-6">
-                                <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover
-                                    Now</a>
+                                <a href="tel://{{ site_information.0.phone }}"
+                                   class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Call Now</a>
                             </div>
                             <div class="col-sm-6">
                                 <div class="d-flex">
                                     <i class="fas fa-phone-alt fa-2x text-primary me-4"></i>
                                     <div>
                                         <h4>Call Us</h4>
-                                        <p class="mb-0 fs-5" style="letter-spacing: 1px;">+01234567890</p>
+                                        <p class="mb-0 fs-5"
+                                           style="letter-spacing: 1px;">{{ site_information.0.phone }}</p>
                                     </div>
                                 </div>
                             </div>
