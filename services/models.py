@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-
+from PIL import Image as PILImage
 from common.models import BaseModel
 
 
@@ -10,6 +10,9 @@ def validate_image(image):
 
     if not image.name.endswith(('.png', '.jpg', '.jpeg')):
         raise ValidationError("Rasm faqat .png, .jpg yoki .jpeg formatida bo'lishi kerak.")
+    img = PILImage.open(image)
+    if img.size != (600, 400):
+        raise ValidationError("Rasm o'lchami 600x400 piksel bo'lishi kerak.")
 
 
 class ServiceModel(BaseModel):
