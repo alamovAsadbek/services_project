@@ -18,15 +18,13 @@ class FooterView(View):
 
 class HomeView(View):
     def get(self, request):
-        # FooterView dan kontekstni oling
         footer_view = FooterView(navigate_link='home')
         footer_context = footer_view.get_context()
 
-        # Boshqa kontekstni to'plang
         site_information = SiteModel.objects.all()
         context = {
             'site_information': site_information,
-            **footer_context,  # Footer kontekstini qo'shing
+            **footer_context,
         }
 
         return render(request, 'index.html', context)
