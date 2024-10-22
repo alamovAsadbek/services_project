@@ -1,6 +1,15 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 from common.models import BaseModel
+
+
+def validate_image(image):
+    if image.size > 2 * 1024 * 1024:
+        raise ValidationError("Rasm o'lchami 2MB dan kichik bo'lishi kerak.")
+
+    if not image.name.endswith(('.png', '.jpg', '.jpeg')):
+        raise ValidationError("Rasm faqat .png, .jpg yoki .jpeg formatida bo'lishi kerak.")
 
 
 class ServiceModel(BaseModel):
