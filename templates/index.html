@@ -1,5 +1,12 @@
 {% extends "layouts/base/base.html" %}
 {% load static %}
+
+{#blocks#}
+
+{% block site_title %}
+    <title>{{ site_information.site_name }} - Stock Market Website Template</title>
+{% endblock site_title %}
+
 {% block content %}
     <!-- Abvout Start -->
     <div class="container-fluid about py-5">
