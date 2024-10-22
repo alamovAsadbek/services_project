@@ -13,7 +13,7 @@ class BaseView(View):
             'site_information': site_information,
             'carousel_information': carousel_information
         }
-        print(context)
+        print(carousel_information)
         return render(request, 'layouts/base/base.html', context)
 
 
