@@ -6,19 +6,20 @@ from .models import BaseCarouselModel
 
 
 class BaseView(View):
-    def get(self, request):
-        print("ishladi")
+    def get_context_data(self):
         site_information = SiteModel.objects.all()
         carousel_information = BaseCarouselModel.objects.all()
-        print(carousel_information)
-        context = {
+        return {
             'site_information': site_information,
             'carousel_information': carousel_information
         }
-        print(context)
+
+    def get(self, request):
+        context = self.get_context_data()
         return render(request, 'layouts/base/base.html', context)
 
 
 class HomeView(BaseView):
     def get(self, request):
-        return render(request, 'index.html')
+        context = self.get_context_data()
+        return render(request, 'index.html', context)
