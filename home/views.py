@@ -25,7 +25,7 @@ class HomeView(BaseView):
     def get(self, request):
         context = self.get_context_data()
         about = AboutUsModel.objects.all()
-        service = ServiceModel.objects.all()
+        service = ServiceModel.objects.filter(is_active=True)
         context['services'] = service
         context['about'] = about
         return render(request, 'index.html', context)
