@@ -9,12 +9,11 @@ class BaseView(View):
     def get(self, request):
         site_information = SiteModel.objects.all()
         carousel_information = BaseCarouselModel.objects.all()
-        print(site_information)
         context = {
             'site_information': site_information,
             'carousel_information': carousel_information
         }
-        print(carousel_information)
+        print(context)
         return render(request, 'layouts/base/base.html', context)
 
 
