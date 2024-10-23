@@ -51,7 +51,7 @@ class WorkModel(BaseModel):
     image = models.ImageField(upload_to='works', verbose_name="Qilgan ishingiz rasmi")
     is_active = models.BooleanField(default=True, verbose_name="Faol ish")
     who_did = models.ForeignKey('team.TeamModel', on_delete=models.SET_NULL, null=True,
-                                verbose_name="Ish qilgan jamg'ar")
+                                verbose_name="Bu ishni kim bajargan")
 
     def __str__(self):
         return self.title
