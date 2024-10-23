@@ -32,17 +32,17 @@ class ServiceModel(BaseModel):
 
 
 class FeatureModel(BaseModel):
-    title = models.CharField(max_length=255, unique=True, verbose_name="Xususiyat nomi")
-    description = models.TextField(verbose_name="Xususiyat haqida ma'lumot")
-    image = models.ImageField(upload_to='features', verbose_name="Xususiyat rasmi")
+    title = models.CharField(max_length=255, unique=True, verbose_name="Qulaylik nomi")
+    description = models.TextField(verbose_name="Qulaylik haqida ma'lumot")
+    image = models.ImageField(upload_to='features', verbose_name="Qulaylik rasmi")
     is_active = models.BooleanField(default=True, verbose_name="Faol xususiyat")
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = "Xususiyatlari"
-        verbose_name = "Xususiyat"
+        verbose_name_plural = "Qulayliklarimiz"
+        verbose_name = "Qulaylik"
 
 
 class WorkModel(BaseModel):
