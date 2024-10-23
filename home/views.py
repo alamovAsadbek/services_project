@@ -26,7 +26,7 @@ class HomeView(BaseView):
         context = self.get_context_data()
         about = AboutUsModel.objects.all()
         service = ServiceModel.objects.filter(is_active=True)
-        featured_service = FeatureModel.objects.filter(is_featured=True)
+        featured_service = FeatureModel.objects.filter(is_active=True)
         context['services'] = service
         context['about'] = about
         context['featured_service'] = featured_service
