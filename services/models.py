@@ -53,7 +53,9 @@ class WorkModel(BaseModel):
                                 verbose_name="Bu ishni kim bajargan", related_name='works',
                                 help_text="Agar bu ishni jamoa bilan birga qilingan bo'linsa, hech nima "
                                           "tanlanmasa o'zi jamoa bilan bo'lib tanlanadi")
-    is_active = models.BooleanField(default=True, verbose_name="Faol ish")
+    is_active = models.BooleanField(default=True, verbose_name="Faol ish",
+                                    help_text="Agar bu ekranga chiqishni xoxlasayiz tugma tanlangan bo'lishi kerak, "
+                                              "aks holda bu ekranga chiqmaydi. Faqatgina bazada saqlanib turadi")
 
     def __str__(self):
         return self.title
