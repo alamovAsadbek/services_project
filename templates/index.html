@@ -100,14 +100,13 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="feature-item p-4">
                             <div class="feature-icon p-4 mb-4">
-                                <img src="{% static 'img/about-1.jpg' %}" alt="404"
+                                <img src="{{ feature.image.url }}" alt="404"
                                      style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
                             </div>
-                            <h4>Global Management</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                                pariatur...
+                            <h4>{{ feature.title }}</h4>
+                            <p class="mb-4">
+                                {{ feature.description }}
                             </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
                         </div>
                     </div>
                 {% endfor %}
