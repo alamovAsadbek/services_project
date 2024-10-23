@@ -49,11 +49,11 @@ class WorkModel(BaseModel):
     title = models.CharField(max_length=255, verbose_name="Qilgan ishingiz nomi")
     description = models.TextField(verbose_name="Qilgan ishingiz haqida ma'lumot")
     image = models.ImageField(upload_to='works', verbose_name="Qilgan ishingiz rasmi")
-    is_active = models.BooleanField(default=True, verbose_name="Faol ish")
     who_did = models.ForeignKey('team.TeamModel', on_delete=models.SET_NULL, null=True,
                                 verbose_name="Bu ishni kim bajargan", related_name='works',
                                 help_text="Agar bu ishni jamoa bilan birga qilingan bo'linsa, hech nima "
                                           "tanlanmasa o'zi jamoa bilan bo'lib tanlanadi")
+    is_active = models.BooleanField(default=True, verbose_name="Faol ish")
 
     def __str__(self):
         return self.title
