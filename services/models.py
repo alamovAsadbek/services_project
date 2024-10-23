@@ -52,8 +52,8 @@ class WorkModel(BaseModel):
     is_active = models.BooleanField(default=True, verbose_name="Faol ish")
     who_did = models.ForeignKey('team.TeamModel', on_delete=models.SET_NULL, null=True,
                                 verbose_name="Bu ishni kim bajargan", related_name='works',
-                                description="Agar bu ishni jamoa bilan birga qilingan bo'linsa, hech nima "
-                                            "tanlanmasa o'zi jamoa bilan bo'lib tanlanadi")
+                                help_text="Agar bu ishni jamoa bilan birga qilingan bo'linsa, hech nima "
+                                          "tanlanmasa o'zi jamoa bilan bo'lib tanlanadi")
 
     def __str__(self):
         return self.title
