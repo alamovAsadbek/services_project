@@ -18,6 +18,7 @@ class ServicesView(BaseView):
         return render(request, 'service.html', context)
 
 
-class WorksView(View):
+class WorksView(BaseView):
     def get(self, request):
-        return render(request, 'blog.html')
+        context = self.get_context_data()
+        return render(request, 'blog.html', context)
