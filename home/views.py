@@ -34,5 +34,5 @@ class HomeView(BaseView):
         context['about'] = about
         context['featured_service'] = featured_service
         context['works'] = works
-        context['team'] = team
+        context['teams'] = team
         return render(request, 'index.html', context)
