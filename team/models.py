@@ -10,15 +10,15 @@ def validate_image_format(image):
     try:
         img = PilImage.open(image)
         if img.format not in ['JPEG', 'JPG', 'PNG']:
-            raise ValidationError('Image must be in JPEG or PNG format.')
+            raise ValidationError("Rasm JPEG yoki PNG formatida bo'lishi kerak.")
     except Exception:
-        raise ValidationError('Invalid image file.')
+        raise ValidationError("Rasm fayli yaroqsiz.")
 
 
 def validate_image_dimensions(image):
     img = PilImage.open(image)
     if img.size != (300, 300):
-        raise ValidationError('Image dimensions must be exactly 300x300 pixels.')
+        raise ValidationError("Rasm o'lchamlari aniq 300x300 piksel bo'lishi kerak.")
 
 
 class TeamModel(BaseModel):
