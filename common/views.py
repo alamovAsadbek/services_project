@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views import View
 
 
-
+def handler404(request, exception):
+    return render(request, '404.html', status=404)

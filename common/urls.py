@@ -12,3 +12,5 @@ urlpatterns = [
     path('works/', WorksView.as_view(), name='works'),
     path('contact/', ContactView.as_view(), name='contact'),
 ]
+
+handler404 = 'common.views.handler404'
