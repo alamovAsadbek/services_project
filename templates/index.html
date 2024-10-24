@@ -154,16 +154,20 @@
                     {% for work in works %}
                         <div class="blog-item p-4">
                             <div class="blog-img mb-4">
-                                <img src="{% static 'img/service-1.jpg' %}" class="img-fluid w-100 rounded"
+                                <img src="{{ work.image.url }}" class="img-fluid w-100 rounded"
                                      alt="404image">
                                 <div class="blog-title">
-                                    <a href="#" class="btn">Dividend Stocks</a>
+                                    {% if work.who_did %}
+                                        <a href="#"
+                                           class="btn">{{ work.who_did.last_name }} {{ work.who_did.first_name }}</a>
+                                    {% else %}
+                                        <a href="#" class="btn">Jamoa</a>
+                                    {% endif %}
                                 </div>
                             </div>
-                            <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                            <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut
-                                aliquam
-                                suscipit error corporis accusamus labore....
+                            <a href="#" class="h4 d-inline-block mb-3">{{ work.title }}</a>
+                            <p class="mb-4">
+                                {{ work.description }}
                             </p>
                         </div>
                     {% endfor %}
