@@ -15,7 +15,13 @@ def validate_image_format(image):
         raise ValidationError("Rasm fayli yaroqsiz.")
 
 
-def validate_image_dimensions(image, max_width=300, max_height=300):
+def validate_image_dimensions(image, max_width: int = 300, max_height: int = 300):
+    img = PilImage.open(image)
+    if img.size != (max_width, max_height):
+        raise ValidationError(f"Rasm o'lchamlari aniq {max_width}x{max_height} piksel bo'lishi kerak.")
+
+
+def validate_image_dimensions_review(image, max_width: int = 100, max_height: int = 100):
     img = PilImage.open(image)
     if img.size != (max_width, max_height):
         raise ValidationError(f"Rasm o'lchamlari aniq {max_width}x{max_height} piksel bo'lishi kerak.")
@@ -45,7 +51,7 @@ class ReviewModel(BaseModel):
     last_name = models.CharField(max_length=80)
     description = models.TextField()
     image = models.ImageField(upload_to='reviews',
-                              validators=[validate_image_dimensions(100, 100), validate_image_format], blank=True,
+                              validators=[validate_image_dimensions_review, validate_image_format], blank=True,
                               null=True)
 
     def __str__(self):
