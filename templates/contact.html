@@ -118,13 +118,13 @@
 
             // Formadagi ma'lumotlarni olish
             const name = document.getElementById('name').value;
-            const last = document.getElementById('last_name').value;
+            const lastName = document.getElementById('last_name').value;
             const phone = document.getElementById('phone').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
             // Create message text
-            const textMessage = `Ism: ${name}\nEmail: ${email}\nTelefon: ${phone}\nMavzu: ${subject}\nQo'shimcha ma'lumot: ${message}`;
+            const textMessage = `Ism: ${name}\nFamiliya: ${lastName}\nTelefon: ${phone}\nMavzu: ${subject}\nQo'shimcha ma'lumot: ${message}`;
 
             // Telegram bot token va chat ID
             const token = '6541588111:AAEpIblw9LOeFU_AnnBxFzCLl-PjpCFw9ZI';
