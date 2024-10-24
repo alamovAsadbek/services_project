@@ -44,7 +44,9 @@ class ReviewModel(BaseModel):
     first_name = models.CharField(max_length=80)
     last_name = models.CharField(max_length=80)
     description = models.TextField()
-    image = models.ImageField(upload_to='reviews', blank=True, null=True)
+    image = models.ImageField(upload_to='reviews',
+                              validators=[validate_image_dimensions(100, 100), validate_image_format], blank=True,
+                              null=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
