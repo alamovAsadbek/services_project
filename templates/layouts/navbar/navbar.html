@@ -8,6 +8,9 @@
             <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+            {% if request.resolver_match %}
+                <p>Current URL name: {{ request.resolver_match.url_name }}</p>
+            {% endif %}
             <div class="navbar-nav ms-auto py-0">
                 <a href="{% url 'home' %}"
                    class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Asosiy</a>
@@ -21,6 +24,8 @@
                     ishlarimiz</a>
                 <a href="{% url 'contact' %}"
                    class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Bog'lanish</a>
+                <a href="#" class="nav-item nav-link">current url: {{ request.url }}</a>
+
             </div>
         </div>
     </nav>
