@@ -9,11 +9,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="{% url 'home' %}" class="nav-item nav-link active">Asosiy</a>
-                <a href="{% url 'about' %}" class="nav-item nav-link">Biz haqimizda</a>
-                <a href="{% url 'services' %}" class="nav-item nav-link">Xizmatlarimiz</a>
-                <a href="{% url 'works' %}" class="nav-item nav-link">Bizning ishlarimiz</a>
-                <a href="{% url 'contact' %}" class="nav-item nav-link">Bog'lanish</a>
+                <a href="{% url 'home' %}"
+                   class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Asosiy</a>
+                <a href="{% url 'about' %}"
+                   class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">Biz haqimizda</a>
+                <a href="{% url 'services' %}"
+                   class="nav-item nav-link {% if request.path == '/services/' %}active{% endif %}">Xizmatlarimiz</a>
+                <a href="{% url 'works' %}"
+                   class="nav-item nav-link {% if request.path == '/works/' %}active{% endif %}">Bizning ishlarimiz</a>
+                <a href="{% url 'contact' %}"
+                   class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Bog'lanish</a>
+
             </div>
         </div>
     </nav>
