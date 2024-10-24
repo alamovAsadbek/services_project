@@ -4,12 +4,14 @@ from common.models import BaseModel
 
 
 class TeamModel(BaseModel):
-    first_name = models.CharField(max_length=80)
-    last_name = models.CharField(max_length=80)
-    profession = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='team', blank=True, null=True)
-    facebook_url = models.URLField(blank=True, null=True)
-    instagram_url = models.URLField(blank=True, null=True)
+    first_name = models.CharField(max_length=80, verbose_name='Ism')
+    last_name = models.CharField(max_length=80, verbose_name='Familiya')
+    profession = models.CharField(max_length=100, verbose_name='Mutaxassislik')
+    image = models.ImageField(upload_to='team', blank=True, null=True, verbose_name='Rasm')
+    facebook_url = models.URLField(blank=True, null=True, verbose_name='Facebook URL',
+                                   help_text="Bu yerda Facebook akkauntini link kurinishda berish kerak")
+    instagram_url = models.URLField(blank=True, null=True, verbose_name='Instagram URL',
+                                    help_text="Bu yerda Instagram akkauntini link kurinishda berish kerak")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
