@@ -4,7 +4,7 @@ from django.views import View
 from about_us.models import AboutUsModel
 from services.models import ServiceModel, FeatureModel, WorkModel
 from social_network.models import SiteModel
-from team.models import TeamModel
+from team.models import TeamModel, ReviewModel
 from .models import BaseCarouselModel
 
 
@@ -30,9 +30,13 @@ class HomeView(BaseView):
         featured_service = FeatureModel.objects.filter(is_active=True)
         works = WorkModel.objects.filter(is_active=True)
         team = TeamModel.objects.all()
+        review = ReviewModel.objects.all()
+
         context['services'] = service
         context['about'] = about
         context['featured_service'] = featured_service
         context['works'] = works
         context['teams'] = team
+        context['reviews'] = review
+
         return render(request, 'index.html', context)
