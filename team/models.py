@@ -18,7 +18,7 @@ def validate_image_format(image):
 def validate_image_dimensions(image, max_width=300, max_height=300):
     img = PilImage.open(image)
     if img.size != (max_width, max_height):
-        raise ValidationError("Rasm o'lchamlari aniq 300x300 piksel bo'lishi kerak.")
+        raise ValidationError(f"Rasm o'lchamlari aniq {max_width}x{max_height} piksel bo'lishi kerak.")
 
 
 class TeamModel(BaseModel):
