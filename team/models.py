@@ -15,9 +15,9 @@ def validate_image_format(image):
         raise ValidationError("Rasm fayli yaroqsiz.")
 
 
-def validate_image_dimensions(image):
+def validate_image_dimensions(image, max_width=300, max_height=300):
     img = PilImage.open(image)
-    if img.size != (300, 300):
+    if img.size != (max_width, max_height):
         raise ValidationError("Rasm o'lchamlari aniq 300x300 piksel bo'lishi kerak.")
 
 
