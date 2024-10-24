@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views import View
+
+from home.views import BaseView
 
 
-class ContactView(View):
+class ContactView(BaseView):
     def get(self, request):
-        return render(request, 'contact.html')
+        contex = self.get_context_data()
+        return render(request, 'contact.html', contex)
