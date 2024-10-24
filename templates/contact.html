@@ -49,47 +49,46 @@
                             <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
                                 form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code
                                 and you're done.</p>
-                            <form>
+                            <form id="contactForm">
                                 <div class="row g-4">
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control border-0" id="name"
-                                                   placeholder="Ismingiz">
+                                                   placeholder="Ismingiz" required>
                                             <label for="name">Ismingiz</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
                                             <input type="email" class="form-control border-0" id="email"
-                                                   placeholder="Familiyangiz">
-                                            <label for="email">Familiyangiz</label>
+                                                   placeholder="Email" required>
+                                            <label for="email">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="number" class="form-control border-0" id="phone"
-                                                   placeholder="Telefon raqam (+998)">
-                                            <label for="subject">Telefon raqam (+998)</label>
+                                                   placeholder="Telefon raqam (+998)" required>
+                                            <label for="phone">Telefon raqam (+998)</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="text" class="form-control border-0" id="subject"
-                                                   placeholder="Mavzu">
+                                                   placeholder="Mavzu" required>
                                             <label for="subject">Mavzu</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea class="form-control border-0"
-                                                      placeholder="Mavzu haqida batafsil yozing"
-                                                      id="message" style="height: 160px"></textarea>
+                                                      placeholder="Mavzu haqida batafsil yozing" id="message"
+                                                      style="height: 160px" required></textarea>
                                             <label for="message">Qo'shimcha ma'lumot</label>
                                         </div>
-
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3">Jo'natish</button>
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Jo'natish</button>
                                     </div>
                                 </div>
                             </form>
