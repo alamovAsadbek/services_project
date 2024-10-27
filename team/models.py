@@ -47,12 +47,12 @@ class TeamModel(BaseModel):
 
 
 class ReviewModel(BaseModel):
-    first_name = models.CharField(max_length=80)
-    last_name = models.CharField(max_length=80)
-    description = models.TextField()
+    first_name = models.CharField(max_length=80, verbose_name='Ism')
+    last_name = models.CharField(max_length=80, verbose_name='Familiya')
+    description = models.TextField(verbose_name="Sharh matni")
     image = models.ImageField(upload_to='reviews',
                               validators=[validate_image_dimensions_review, validate_image_format], blank=True,
-                              null=True)
+                              null=True, verbose_name='Rasm')
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
