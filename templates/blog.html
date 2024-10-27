@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <!-- Blog Start -->
-    <div class="container-fluid blog pb-5 mt-5">
+    <div class="container-fluid blog pb-5">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Bizning ishlarimiz</h4>
@@ -13,35 +13,25 @@
                     darajada xizmat ko'rsatamiz va natijalarimiz bilan faxrlanamiz.
                 </p>
             </div>
-            <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+            <div class="row">
                 {% if not works %}
-                    <div class="blog-item p-4">
+                    <div class="blog-item p-4 col-12 col-md-6 col-lg-4">
                         <div class="blog-img mb-4">
                             <img src="{% static 'img/service-1.jpg' %}" class="img-fluid w-100 rounded" alt="">
                             <div class="blog-title">
-                                <a href="#" class="btn">Dividend Stocks</a>
+                                <a href="#" class="btn">Jamoa</a>
                             </div>
                         </div>
                         <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut
-                            aliquam
-                            suscipit error corporis accusamus labore....
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img src="{% static 'img/testimonial-1.jpg' %}" class="img-fluid rounded-circle"
-                                 style="width: 60px; height: 60px;" alt="">
-                            <div class="ms-3">
-                                <h5>Asad</h5>
-                                <p class="mb-0">October 9, 2025</p>
-                            </div>
-                        </div>
+                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
+                            suscipit error corporis accusamus labore....</p>
                     </div>
                 {% else %}
                     {% for work in works %}
-                        <div class="blog-item p-4">
+                        <div class="blog-item p-4 col-12 col-md-6 col-lg-4" style="margin-right: 15px;">
                             <div class="blog-img mb-4">
-                                <img src="{{ work.image.url }}" class="img-fluid w-100 rounded"
-                                     alt="404image" style="width: 100%; height: 200px; object-fit: cover;">
+                                <img src="{{ work.image.url }}" class="img-fluid w-100 rounded" alt="404image"
+                                     style="width: 100%; height: 200px; object-fit: cover;">
                                 <div class="blog-title">
                                     {% if work.who_did %}
                                         <a href="#"
@@ -52,9 +42,7 @@
                                 </div>
                             </div>
                             <a href="#" class="h4 d-inline-block mb-3">{{ work.title }}</a>
-                            <p class="mb-4">
-                                {{ work.description }}
-                            </p>
+                            <p class="mb-4">{{ work.description }}</p>
                         </div>
                     {% endfor %}
                 {% endif %}
