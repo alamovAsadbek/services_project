@@ -182,9 +182,16 @@
                 {% for team in teams %}
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
-                            <div class="team-img">
-                                <img src="{{ team.image.url }}" class="img-fluid" alt="">
-                            </div>
+                            {% if not team.image %}
+                                <div class="team-img">
+                                    <img src="https://t4.ftcdn.net/jpg/08/08/37/31/360_F_808373133_lrCrFLLTXF0A2WQK7QKMCNAzKCjX7kvb.jpg"
+                                         class="img-fluid" alt="">
+                                </div>
+                            {% else %}
+                                <div class="team-img">
+                                    <img src="{{ team.image.url }}" class="img-fluid" alt="">
+                                </div>
+                            {% endif %}
                             <div class="team-title">
                                 <h4 class="mb-0">{{ team.last_name }} {{ team.first_name }}</h4>
                                 <p class="mb-0">{{ team.profession }}</p>
