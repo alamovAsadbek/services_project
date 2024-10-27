@@ -16,6 +16,6 @@ class AboutView(BaseView):
 
         context['about'] = about
         context['featured_service'] = featured_service
-        context['team'] = team
-        
+        context['teams'] = team
+
         return render(request, 'about.html', context)
