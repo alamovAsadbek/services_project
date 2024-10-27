@@ -13,4 +13,4 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
 ]
 
-handler404 = 'common.views.handler404'
+handler404 = 'home.views.handler404'
