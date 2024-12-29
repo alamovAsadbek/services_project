@@ -7,6 +7,7 @@ class SiteModel(BaseModel):
     site_name = models.CharField(max_length=200, null=True, blank=True, verbose_name="Sayt nomi")
     location = models.CharField(max_length=200, null=True, blank=True, verbose_name="Servis manzili")
     email = models.EmailField(null=True, blank=True, verbose_name="Elektron pochta manzili")
+    telegram_bot = models.CharField(max_length=200, null=True, blank=True, verbose_name="Telegram bot manzili")
     phone = models.CharField(max_length=200, null=True, blank=True, verbose_name="Telefon raqami")
     facebook = models.CharField(max_length=200, null=True, blank=True, verbose_name="Facebook manzili")
     instagram = models.CharField(max_length=200, null=True, blank=True, verbose_name="Instagram manzili")
