@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 from dotenv import load_dotenv
 
@@ -69,7 +70,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# DATABASE_URL = 'postgresql://services_project:MGgmv8NZA1IjnK18S1756sNVOqj6iCAR@dpg-cu5a6hdumphs739knm8g-a.oregon-postgres.render.com/services_project'
+# url = urlparse(DATABASE_URL)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': url.path[1:],  # URL-dan bazaning nomini oling
+#         'USER': url.username,  # URL-dan foydalanuvchini oling
+#         'PASSWORD': url.password,  # URL-dan parolni oling
+#         'HOST': url.hostname,  # URL-dan server nomini oling
+#         'PORT': url.port or '5432',  # Portni aniqlang, agar bo'lmasa 5432 ni ishlatish
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
