@@ -69,27 +69,22 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-# DATABASE_URL = 'postgresql://services_project:MGgmv8NZA1IjnK18S1756sNVOqj6iCAR@dpg-cu5a6hdumphs739knm8g-a.oregon-postgres.render.com/services_project'
-# url = urlparse(DATABASE_URL)
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': url.path[1:],  # URL-dan bazaning nomini oling
-#         'USER': url.username,  # URL-dan foydalanuvchini oling
-#         'PASSWORD': url.password,  # URL-dan parolni oling
-#         'HOST': url.hostname,  # URL-dan server nomini oling
-#         'PORT': url.port or '5432',  # Portni aniqlang, agar bo'lmasa 5432 ni ishlatish
+#         'NAME': os.getenv('DB_NAME'),
+#         'USER': os.getenv('DB_USER'),
+#         'PASSWORD': os.getenv('DB_PASSWORD'),
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT'),
 #     }
 # }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
