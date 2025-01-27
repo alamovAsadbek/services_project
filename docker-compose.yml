@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    image: docker-amriddin # Dockerfile yordamida yaratgan tasvir nomi
+    container_name: my_django_container
+    build: .
+    command: ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+    volumes:
+      - .:/app  # Django loyihasi papkasini konteynerga bog'lash
+      - ./data:/app/data  # SQLite ma'lumotlar bazasini konteynerda saqlash
+    ports:
+      - "8000:8000"  # Konteynerdagi portni kompyuteringizga yo'naltirish
+    environment:
+      - DEBUG=1  # Yoki 0 bo'lishi mumkin ishlab chiqarishda
+      - ALLOWED_HOSTS=localhost,127.0.0.1
+
+volumes:
+  data:
